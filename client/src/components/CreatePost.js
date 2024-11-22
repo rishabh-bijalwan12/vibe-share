@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 function CreatePost() {
   const [body, setBody] = useState("");
   const [image, setImage] = useState(null);
-  const [imageURL, setImageURL] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -54,7 +53,6 @@ function CreatePost() {
       }
 
       const cloudinaryResult = await cloudinaryResponse.json();
-      setImageURL(cloudinaryResult.url);
 
       // Save the post to the database
       try {

@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaHeart, FaUserMinus } from "react-icons/fa";
+import { FaHeart} from "react-icons/fa";
 
 function Profile() {
   const [data, setData] = useState([]); // for user posts
   const [userdata, setUserdata] = useState({}); // for user data (followers, following)
   const [userName, setUserName] = useState("");
   const [isLoading, setIsLoading] = useState(true);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [selectedPost, setSelectedPost] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDeleteConfirmOpen, setIsDeleteConfirmOpen] = useState(false);
   const [postToDelete, setPostToDelete] = useState(null);
   const [isFollowingModalOpen, setIsFollowingModalOpen] = useState(false);
@@ -69,15 +66,6 @@ function Profile() {
     }
   }, [isFollowingModalOpen]);
 
-  const handlePostClick = (post) => {
-    setSelectedPost(post);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    setSelectedPost(null);
-  };
 
   const handleDeletePost = (postId) => {
     const token = localStorage.getItem("jwt");
@@ -85,8 +73,6 @@ function Profile() {
       navigate("/login");
       return;
     }
-
-    setIsDeleting(true);
 
     fetch(`/deletepost/${postId}`, {
       method: "DELETE",
@@ -97,11 +83,10 @@ function Profile() {
     })
       .then(() => {
         setData((prevData) => prevData.filter((post) => post._id !== postId));
-        setIsDeleting(false);
         setIsDeleteConfirmOpen(false);
         handleCloseModal();
       })
-      .catch(() => setIsDeleting(false));
+      .catch((err) => console.err(err));
   };
 
   const openDeleteConfirmBox = (postId) => {
