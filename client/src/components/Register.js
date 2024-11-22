@@ -49,7 +49,10 @@ function Register() {
       return;
     }
     try {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9884d2897f3ae80a273b674144c6a4c52a120dd3
       const response = await fetch('/signup', {
         method: 'POST',
         headers: {
