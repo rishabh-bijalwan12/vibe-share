@@ -4,7 +4,7 @@
   "main": "server/app.js",
   "scripts": {
     "build": "npm install --prefix client && npm run build --prefix client",
-    "start": "node server/app.js",
+    "start": "nodemon server/app.js",
     "dev": "nodemon server/app.js"
   },
   "dependencies": {
