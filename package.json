@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev" : "nodemon server/app.js",
-    "build": "npm install && npm install --prefix client && npm run build --prefix client",
+    "dev": "nodemon server/app.js",
+    "build": "CI=false npm install && npm install --prefix client && npm run build --prefix client",  // Corrected build script
     "start": "node server/app.js"
   },
   "author": "",
@@ -18,5 +18,8 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.8.1",
     "nodemon": "^3.1.7"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }
