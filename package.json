@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon server/app.js",
-    "build": "CI=false npm install && npm install --prefix client && npm run build --prefix client",  // Corrected build script
+    "build": "CI=false npm install && npm install --prefix client && npm run build --prefix client",
     "start": "node server/app.js"
   },
   "author": "",
