@@ -41,7 +41,7 @@ function UserProfile() {
             return;
         }
 
-        fetch("/follow", {
+        fetch('/follow', {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function UserProfile() {
             return;
         }
 
-        fetch("/unfollow", {
+        fetch('/unfollow', {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

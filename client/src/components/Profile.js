@@ -31,12 +31,12 @@ function Profile() {
     // Fetch user's posts and user data simultaneously
     const fetchData = async () => {
       try {
-        const postsResponse = await fetch("/mypost", {
+        const postsResponse = await fetch('/mypost', {
           headers: { Authorization: `bearer ${token}` },
         });
         const postsData = await postsResponse.json();
 
-        const userDetailsResponse = await fetch("/userdetails", {
+        const userDetailsResponse = await fetch('/userdetails', {
           headers: { Authorization: `bearer ${token}` },
         });
         const userDetailsData = await userDetailsResponse.json();
