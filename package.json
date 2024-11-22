@@ -1,25 +1,21 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server/app.js",
   "scripts": {
     "dev": "nodemon server/app.js",
-    "build": "CI=false npm install && npm install --prefix client && npm run build --prefix client",
+    "build": "npm install --prefix client && npm run build --prefix client",
     "start": "node server/app.js"
   },
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.8.1",
-    "nodemon": "^3.1.7"
+    "mongoose": "^8.8.1"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "nodemon": "^3.1.7"
   }
 }
