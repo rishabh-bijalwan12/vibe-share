@@ -31,12 +31,12 @@ function Profile() {
     // Fetch user's posts and user data simultaneously
     const fetchData = async () => {
       try {
-        const postsResponse = await fetch("http://localhost:5000/mypost", {
+        const postsResponse = await fetch("/mypost", {
           headers: { Authorization: `bearer ${token}` },
         });
         const postsData = await postsResponse.json();
 
-        const userDetailsResponse = await fetch("http://localhost:5000/userdetails", {
+        const userDetailsResponse = await fetch("/userdetails", {
           headers: { Authorization: `bearer ${token}` },
         });
         const userDetailsData = await userDetailsResponse.json();
@@ -88,7 +88,7 @@ function Profile() {
 
     setIsDeleting(true);
 
-    fetch(`http://localhost:5000/deletepost/${postId}`, {
+    fetch(`/deletepost/${postId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -120,7 +120,7 @@ function Profile() {
       return;
     }
 
-    fetch('http://localhost:5000/unfollow', {
+    fetch('/unfollow', {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -148,7 +148,7 @@ function Profile() {
 
   const showUserName = (id) => {
     const token = localStorage.getItem("jwt");
-    fetch(`http://localhost:5000/userdetails/${id}`, {
+    fetch(`/userdetails/${id}`, {
       headers: { Authorization: `bearer ${token}` },
     })
       .then((res) => res.json())

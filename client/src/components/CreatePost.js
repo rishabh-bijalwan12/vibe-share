@@ -58,7 +58,7 @@ function CreatePost() {
 
       // Save the post to the database
       try {
-        const databaseResponse = await fetch("http://localhost:5000/createpost", {
+        const databaseResponse = await fetch("/createpost", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

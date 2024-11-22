@@ -48,8 +48,8 @@ function Register() {
       setLoading(false);
       return;
     }
-
     try {
+
       const response = await fetch('/signup', {
         method: 'POST',
         headers: {

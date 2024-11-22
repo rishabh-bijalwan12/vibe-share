@@ -17,7 +17,7 @@ function UserProfile() {
             return;
         }
 
-        fetch(`http://localhost:5000/userprofile/${userId}`, {
+        fetch(`/userprofile/${userId}`, {
             headers: {
                 Authorization: `bearer ${token}`,
             },
@@ -41,7 +41,7 @@ function UserProfile() {
             return;
         }
 
-        fetch("http://localhost:5000/follow", {
+        fetch("/follow", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -68,7 +68,7 @@ function UserProfile() {
             return;
         }
 
-        fetch("http://localhost:5000/unfollow", {
+        fetch("/unfollow", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

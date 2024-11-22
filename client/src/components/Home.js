@@ -17,7 +17,7 @@ function Home() {
       return;
     }
 
-    fetch("http://localhost:5000/allpost", {
+    fetch("/allpost", {
       headers: {
         Authorization: `bearer ${token}`,
       },
@@ -44,7 +44,7 @@ function Home() {
       return;
     }
 
-    fetch("http://localhost:5000/like", {
+    fetch("/like", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -75,7 +75,7 @@ function Home() {
       return;
     }
 
-    fetch("http://localhost:5000/unlike", {
+    fetch("/unlike", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -106,7 +106,7 @@ function Home() {
       return;
     }
 
-    fetch("http://localhost:5000/comment", {
+    fetch("/comment", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
