@@ -84,7 +84,6 @@ function Profile() {
       .then(() => {
         setData((prevData) => prevData.filter((post) => post._id !== postId));
         setIsDeleteConfirmOpen(false);
-        handleCloseModal();
       })
       .catch((err) => console.err(err));
   };
@@ -187,7 +186,6 @@ function Profile() {
                 <div
                   key={post._id}
                   className="bg-white rounded-lg shadow-lg overflow-hidden cursor-pointer transition-transform transform hover:scale-101 hover:shadow-2xl"
-                  onClick={() => handlePostClick(post)}
                 >
                   <img
                     src={post.image}
