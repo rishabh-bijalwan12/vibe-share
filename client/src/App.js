@@ -9,19 +9,8 @@ import CreatePost from './components/CreatePost';
 import UserProfile from './components/UserProfile';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react';
 
 function App() {
-  useEffect(() => {
-    const handleBeforeUnload = () => {
-      localStorage.clear();
-    };
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []); // Empty dependency array ensures this runs once on mount
-
   return (
     <>
       <Router>
