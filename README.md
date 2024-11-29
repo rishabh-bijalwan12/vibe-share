@@ -19,14 +19,10 @@ Tech Stack
 
 Frontend: React.js
 
-
 Backend: Node.js with Express
-
 
 Database: MongoDB
 
-
 Authentication: JWT (JSON Web Tokens)
-
 
 Hosting: Render platform (used for both backend and frontend).
