@@ -22,3 +22,9 @@ Database: MongoDB
 Authentication: JWT (JSON Web Tokens)
 
 Hosting: Render platform (used for both backend and frontend).
+
+Screenshots
+
+![image](https://github.com/user-attachments/assets/e2b7329f-1d62-43a4-8336-a9982364d6ff)
+
+
